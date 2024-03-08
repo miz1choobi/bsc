@@ -49,7 +49,7 @@ func NewDebugAPI(eth *Ethereum) *DebugAPI {
 // DumpBlock retrieves the entire state of the database at a given block.
 func (api *DebugAPI) DumpBlock(blockNr rpc.BlockNumber) (state.Dump, error) {
 	opts := &state.DumpConfig{
-		OnlyWithAddresses: true,
+		OnlyWithAddresses: false,
 		Max:               AccountRangeMaxResults, // Sanity limit over RPC
 	}
 	if blockNr == rpc.PendingBlockNumber {
